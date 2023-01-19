@@ -4,7 +4,7 @@
 A Werewolf Bot For HackChat
 为hack.chat量身打造的狼人杀游戏机器人
 
-Author:paperee
+Author:paperee,jmr
 可以吐槽我的屎山代码 但不能对我的uwu变量名有意见(被打
 
 Thanks:Maggie zzChumo xuan2wei1 4n0n4me jmr DPG IAmLonelyWhoCanSaveMe 23
@@ -114,7 +114,7 @@ def main(socket,channel):
 					send(f"/me uwu")
 
 				elif text=="|help":
-					send(f"/me >\n·\n[【狼人杀】](https://)生存\n开发者：纸片君ee(PAPEREE)\n机器人：{botname[:-4]}\n版本号：uwu.1.00\n开发进度：95%\n·\n[【手册】](https://)\n查看帮助：|help\n查看规则：|rule\n获取权限：|root\n开始生存：|uwu")
+					send(f"/me >\n·\n[【狼人杀】](https://)生存\n开发者：纸片君ee(PAPEREE),jmr\n机器人：{botname[:-4]}\n版本号：uwu.1.00\n开发进度：95%\n·\n[【手册】](https://)\n查看帮助：|help\n查看规则：|rule\n获取权限：|root\n开始生存：|uwu")
 
 
 				elif text=="|rule":
