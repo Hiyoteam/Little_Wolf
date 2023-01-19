@@ -36,6 +36,11 @@ hc="wss://hack.chat/chat-ws"
 # 频道:yc,ycl
 yc="your-channel"
 ycl="your-channell"
+lo = "lounge"
+
+
+
+cn=yc #选择
 
 # bot名字
 seeb=str(random.randint(1,999)).zfill(3)
@@ -684,4 +689,4 @@ def main(socket,channel):
 
 
 # 开启多线程
-threading.Thread(target=main,args=(hc,yc,)).start()
+threading.Thread(target=main,args=(hc,cn,)).start()
