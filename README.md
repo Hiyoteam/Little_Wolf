@@ -3,7 +3,7 @@
 **A Werewolf Bot For HackChat**  
 为hack.chat量身打造的狼人杀游戏机器人
 
-**Author:paperee**  
+**Author:paperee,jmr**  
 可以吐槽我的屎山代码 但不能对我的uwu变量名有意见(被打
 
 **Thanks:Maggie zzChumo xuan2wei1 4n0n4me jmr DPG IAmLonelyWhoCanSaveMe 23**  
@@ -18,3 +18,4 @@
 - **x**｜结束后胜利方存活数显示0
 - **x**｜已知身份后还会显示请睁眼
 - **x**｜结束后女巫的用药不显示
+- **V**｜开始后无法停止/村长下线
