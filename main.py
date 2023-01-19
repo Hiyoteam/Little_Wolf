@@ -19,6 +19,7 @@ x|有时"【狼人】请睁眼"重复出现
 x|结束后胜利方存活数显示0
 x|已知身份后还会显示请睁眼
 x|结束后女巫的用药不显示
+V|开始后无法停止/村长下线
 '''
 
 import websocket
@@ -134,7 +135,7 @@ def main(socket,channel):
 							send(f"/me >\n[{nick}](https://)成功获取root权限")
 
 							time.sleep(1)
-							send(f"/w {nick} >\n·\n可变更项：\n卡牌(card) 其他(other)\n·\n详细说明：\n卡牌：牌序(1~4) 牌名(str) 阵营(bool)\n其他：正方阵营名(str) 反方阵营名(str) 村长称呼(str)")
+							send(f"/w {nick} >\n·\n可变更项：\n卡牌(card) 其他(other) 停止(stop)\n·\n详细说明：\n卡牌：牌序(1~4) 牌名(str) 阵营(bool)\n其他：正方阵营名(str) 反方阵营名(str) 村长称呼(str)")
 
 						else:
 							try:
@@ -143,10 +144,14 @@ def main(socket,channel):
 								if slices[0][-1]=="card":
 									for new in slices[1:]:
 										card[int(new[0])]=[new[1],card[int(new[0])][1],True if new[2]=="True" else False]
-
+										data={"uwu":False}
+										
 									send(f"/me >\n变更执行成功")
 
 								elif slices[0][-1]=="other":
+									card[0]={True:slices[1][0],False:slices[1][1],None:slices[1][2]}
+									send(f"/me >\n变更执行成功")
+								elif slices[0][-1]=="stop":
 									card[0]={True:slices[1][0],False:slices[1][1],None:slices[1][2]}
 									send(f"/me >\n变更执行成功")
 
