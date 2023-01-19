@@ -124,7 +124,7 @@ def main(socket,channel):
 					send(f"/me >\n·\n主要卡牌：\n{true}/[【{card[0][True]}】](https://)\n{false}/[【{card[0][False]}】](https://)\n{aua}\n·\n限制时长：\n[【{card[2][0]}】](https://)1分钟\n[【{card[3][0]}】](https://)2分钟\n[【{card[4][0]}】](https://)1分钟\n白天投票共4分钟\n·\n生存特性：\n[【{card[1][0]}】](https://)擅长推理\n[【{card[2][0]}】](https://)记性很好\n[【{card[3][0]}】](https://)杀人不受限制\n[【{card[4][0]}】](https://)不会猝死")
 
 				elif text[:5]=="|root":
-					if wss.get('trip')=="eYFDHl" or wss.get('trip')=="ejackX": // emmmm jmr do it
+					if wss.get('trip')=="eYFDHl" or wss.get('trip')=="ejackX": # emmmm jmr do it
 						if text=="|root":
 							send(f"/me >\n[{nick}](https://)成功获取root权限")
 
