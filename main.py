@@ -115,8 +115,7 @@ def main(socket,channel):
 					send(f"/me uwu")
 
 				elif text=="|help":
-					send(f"/me >\n·\n[【狼人杀】](https://)生存\n开发者：纸片君ee(PAPEREE),jmr\n机器人：{botname[:-4]}\n版本号：uwu.1.00\n开发进度：95%\n·\n[【手册】](https://)\n查看帮助：|help\n查看规则：|rule\n获取权限：|
-					     \n开始生存：|uwu")
+					send(f"/me >\n·\n[【狼人杀】](https://)生存\n开发者：纸片君ee(PAPEREE),jmr\n机器人：{botname[:-4]}\n版本号：uwu.1.00\n开发进度：95%\n·\n[【手册】](https://)\n查看帮助：|help\n查看规则：|rule\n获取权限：|root\n开始生存：|uwu")
 
 
 				elif text=="|rule":
