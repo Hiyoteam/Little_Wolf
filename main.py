@@ -144,7 +144,6 @@ def main(socket,channel):
 								if slices[0][-1]=="card":
 									for new in slices[1:]:
 										card[int(new[0])]=[new[1],card[int(new[0])][1],True if new[2]=="True" else False]
-										data={"uwu":False}
 										
 									send(f"/me >\n变更执行成功")
 
@@ -152,7 +151,7 @@ def main(socket,channel):
 									card[0]={True:slices[1][0],False:slices[1][1],None:slices[1][2]}
 									send(f"/me >\n变更执行成功")
 								elif slices[0][-1]=="stop":
-									card[0]={True:slices[1][0],False:slices[1][1],None:slices[1][2]}
+									data={"uwu":False}
 									send(f"/me >\n变更执行成功")
 
 								else:
