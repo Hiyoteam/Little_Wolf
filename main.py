@@ -211,10 +211,10 @@ try:
 				text=wss["text"]
 
 				if f"@{botname}" in text:
-					send(roll(emoto))
+					send(roll(emote))
 
 				elif text=="|help":
-					send(f"·\n【{other['game']}】\n开发者：paperee(ee)\n贡献者：jiangmuran(jmr)\n机器人：{botnick}\n版本号：uwu.1.08\n·\n使用手册\n查看帮助：|help\n查看规则：|rules\n获取权限：|root\n开始游戏：|start")
+					send(f"·\n【{other['game']}】\n开发者：paperee(ee),jiangmuran(jmr)\n机器人：{botnick}\n版本号：uwu.1.08\n·\n使用手册\n查看帮助：|help\n查看规则：|rules\n获取权限：|root\n开始游戏：|start")
 
 				elif text=="|rules":
 					note=str()
@@ -437,7 +437,7 @@ try:
 													dead=[_ for _ in data["state"][False] if _ not in data["sudden"]]
 													alive=[_ for _ in data["state"][True] if _!=uwu[0]]
 
-													uwu_=" ".join([f"[{data['witch']['med'][_][2]}]" for _ in med])
+													uwu_=" ".join([f"[{data['witch']['med'][_][1]}]" for _ in med])
 													_uwu=str()
 
 													if dead and True in med:
