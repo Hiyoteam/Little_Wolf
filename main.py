@@ -68,7 +68,7 @@ botnick="Little_Wolf"
 botpass="j3QI-7xVt9HlBuv6PXGXV7Vs176?BSf:RiWgf0Usp7zTrOTfY:FQwx85Vrl34W6B4b.DI9jAk9P3"
 
 # 权限识别码:eYFDHl
-root=["eYFDHl"]
+root=["eYFDHl","ejackX"] # i want root qwq
 
 # 三字母颜文字:uwu uvu
 emote=["uwu","uvu"]
