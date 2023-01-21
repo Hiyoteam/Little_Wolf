@@ -1,13 +1,19 @@
 # -*- coding: UTF-8 -*-
 
 
+'''
+【设置区域】
+改加入地址&频道 bot昵称 bot识别码
+'''
 
 # 地址列表:hack.chat
 hc="wss://hack.chat/chat-ws"
 
-# 频道列表:yc ycl
+# 频道列表:yc ycl lo warma
 yc="your-channel"
 ycl="your-channell"
+lo="lounge"
+warma="kt1j8rpc"
 
 # 加入地址&频道
 socket=hc
@@ -19,8 +25,11 @@ botnick="Little_Wolf"
 # bot识别码:SB2023
 botpass="j3QI-7xVt9HlBuv6PXGXV7Vs176?BSf:RiWgf0Usp7zTrOTfY:FQwx85Vrl34W6B4b.DI9jAk9P3"
 
-# 权限识别码:eYFDHl
-root=["eYFDHl","ejackX"] # i want root qwq
+# 权限识别码:eYFDHl ejackX
+root=["eYFDHl","ejackX"]
+
+# jmr:i want root qwq
+# ee:i see quq
 
 # 三字母颜文字:uwu uvu
 emote=["uwu","uvu"]
@@ -39,11 +48,13 @@ import os
 import sys
 import threading
 
-
 try:
 	# 主要数据库
 	data={"uwu":False}
-	ver="uwu1.10"
+
+	# 版本号
+	ver="uwu.1.12"
+
 	# 卡牌列表
 	card={0:{True:"好人",False:"坏人"},
 	1:["平民","夜晚：注意旁白 安静等待\n白天：提出意见 跟随大家投票",True],
@@ -52,11 +63,11 @@ try:
 	4:["女巫","夜晚：选择一位使用药水 每种药只能使用一次\n白天：隐藏身份 跟随大家投票",True]}
 
 	# 药水列表
-	otion={True:["解药","救活"],
+	potion={True:["解药","救活"],
 	False:["毒药","毒死"]}
 
 	# 初始牌组
-	group=[1,2,3,4]
+	group=[1,1,2,3,3,4]
 
 	# 其他项目
 	other={"op":"村长","core":"村民","game":"狼人杀"}
@@ -94,7 +105,7 @@ try:
 	witch=[["自动写代码","让鱼变好吃","让人变性","压缩纸片"],
 	["死一般的寂静","看似一派祥和","已经没有人影了","偶有远处的呼喊"],
 	["无声","安静","静悄悄","悄无声息"],
-	["大声","默默","神秘","诡异"],
+	["大声","开心","神秘","诡异"],
 	["想要休息","不知所踪","的纸片丢失了","的小屋无人打扫"]]
 
 	# bot实际名
@@ -166,7 +177,7 @@ try:
 					send(roll(emote))
 
 				elif text=="|help":
-					send(f"·\n【{other['game']}】\n开发者：paperee(ee),jiangmuran(jmr)\n机器人：{botnick}\n版本号：{ver}\n·\n使用手册\n查看帮助：|help\n查看规则：|rules\n获取权限：|root\n开始游戏：|start")
+					send(f"·\n【{other['game']}】\n开发者：paperee(ee) jiangmuran(jmr)\n机器人：{botnick}\n版本号：{ver}\n·\n使用手册\n查看帮助：|help\n查看规则：|rules\n获取权限：|root\n开始游戏：|start")
 
 				elif text=="|rules":
 					note=str()
@@ -185,7 +196,7 @@ try:
 							send(f"[{nick}]成功获取root权限")
 
 							time.sleep(1)
-							send(f"·\n可操作项：\n停止(stop) 重启(reboot) 关机(close)\n·\n可变更项：\n卡牌(card) 阵营(camp) 药水(otion) 牌组(group) 其他(other)\n·\n变更说明：\n卡牌：牌序(1~4) 牌名(str) 阵营(1/0)\n阵营：正方阵营名(str) 反方阵营名(str)\n药水：好坏(1/0) 药名(str) 状态(str)\n牌组：牌序(1~4)\n其他：发起者称呼(str) 玩家称呼(str) 游戏名(str)",nick)
+							send(f"·\n可操作项：\n重启(reboot) 关机(close)\n·\n可变更项：\n卡牌(card) 阵营(camp) 药水(potion) 牌组(group) 其他(other)\n·\n变更说明：\n卡牌：牌序(1~4) 牌名(str) 阵营(1/0)\n阵营：正方阵营名(str) 反方阵营名(str)\n药水：好坏(1/0) 药名(str) 状态(str)\n牌组：牌序(1~4)\n其他：发起者称呼(str) 玩家称呼(str) 游戏名(str)",nick)
 
 						else:
 							try:
@@ -193,18 +204,7 @@ try:
 								order=slices[0][-1]
 								note="变更执行成功"
 
-								if order=="stop":
-									if data["uwu"]:
-										data={"uwu":False}
-										send("操作执行成功")
-
-										time.sleep(1)
-										send(f"【{other['game']}】结束")
-
-									else:
-										send(f"【{other['game']}】没有在进行")
-
-								elif order=="reboot":
+								if order=="reboot":
 									print("reboot:success\n")
 									send("操作执行成功")
 
@@ -230,14 +230,14 @@ try:
 									card[0]={True:slices[1][0],False:slices[1][1]}
 									print(f"card:{card}\n")
 
-								elif order=="otion":
+								elif order=="potion":
 									for _ in slices[1:]:
-										otion[bool(int(_[0]))]=[_[1],_[2]]
+										potion[bool(int(_[0]))]=[_[1],_[2]]
 
-									print(f"otion:{otion}\n")
+									print(f"potion:{potion}\n")
 
 								elif order=="group":
-									uwu=[int(_) for _ in slices[1] if _ in ["1","2","3","4"]]
+									uwu=[int(_) for _ in slices[1] if _ in list("1234")]
 									group=uwu
 
 									if data.get("group"):
@@ -257,7 +257,7 @@ try:
 								send("执行时出现错误")
 
 					else:
-						send(roll(emoto))
+						send(roll(emote))
 
 				elif text=="|start":
 					if data["uwu"]:
@@ -300,10 +300,10 @@ try:
 										uwu=data["core"][_]
 
 										if uwu[1]==2:
-											time.sleep(2)
-											send(f"【{card[2][0]}】请睁眼")
-
 											if uwu[3]:
+												time.sleep(2)
+												send(f"【{card[2][0]}】请睁眼")
+
 												alive=[_ for _ in data["state"][True] if _!=uwu[0]]
 												random.shuffle(alive)
 												uwu_=" ".join([f"[{_}]" for _ in alive])
@@ -332,10 +332,10 @@ try:
 												send(f"【{card[2][0]}】{roll(prophet[4])}")
 
 										elif uwu[1]==3 and not data["werewolf"]["skip"]:
-											time.sleep(2)
-											send(f"【{card[3][0]}】请睁眼")
-
 											if uwu[3]:
+												time.sleep(2)
+												send(f"【{card[3][0]}】请睁眼")
+
 												alive=list(data["state"][True])
 												random.shuffle(alive)
 												uwu_=" ".join([f"[{_}]" for _ in alive])
@@ -377,10 +377,10 @@ try:
 												send(f"狼群中的狼{roll(werewolf[7])}")
 
 										elif uwu[1]==4:
-											time.sleep(2)
-											send(f"【{card[4][0]}】请睁眼")
-
 											if uwu[3]:
+												time.sleep(2)
+												send(f"【{card[4][0]}】请睁眼")
+
 												data["witch"]={"med":data["witch"]["med"],"temp":[],"allow":[]}
 												med=[_ for _ in data["witch"]["med"] if data["witch"]["med"][_][1]]
 
@@ -389,7 +389,7 @@ try:
 													dead=[_ for _ in data["state"][False] if _ not in data["sudden"]]
 													alive=[_ for _ in data["state"][True] if _!=uwu[0]]
 
-													uwu_=" ".join([f"[{data['witch']['med'][_][0]}]" for _ in med])
+													uwu_=" ".join([f"[{potion[data['witch']['med'][_][0]][0]}]" for _ in med if data['witch']['med'][_][1]])
 													_uwu=str()
 
 													if dead and True in med:
@@ -443,7 +443,7 @@ try:
 										_uwu=f"[{data['werewolf']['kill']}]被【{card[3][0]}】杀死了\n"
 
 									if data["witch"]["temp"]:
-										_uwu+=f"[{data['witch']['temp'][0]}]被使用[{otion[data['witch']['temp'][-1]][0]}]的【{card[4][0]}】[{otion[data['witch']['temp'][-1]][1]}]了\n"
+										_uwu+=f"[{data['witch']['temp'][0]}]被使用[{potion[data['witch']['temp'][-1]][0]}]的【{card[4][0]}】[{potion[data['witch']['temp'][-1]][1]}]了\n"
 
 									time.sleep(2)
 									send(f"【公告】昨晚{_uwu}")
@@ -517,7 +517,7 @@ try:
 								[f"[{_}]" for _ in data["core"] if data["core"][_][2]==(not winner)],
 								[f"[{_}]" for _ in data["prophet"]],
 								[f"[{_}]" for _ in data["werewolf"]["dead"]],
-								[f"\n【{card[4][0]}】[{otion[data['witch']['med'][_][0]][1]}]了：[{data['witch']['med'][_][-1]}]" for _ in data["witch"]["med"] if not data["witch"]["med"][_][1]],
+								[f"\n【{card[4][0]}】[{potion[data['witch']['med'][_][0]][1]}]了：[{data['witch']['med'][_][-1]}]" for _ in data["witch"]["med"] if not data["witch"]["med"][_][1]],
 								[f"[{_}]" for _ in data["day"]["dead"]]]
 
 								note=[str() for _ in range(3)]
@@ -565,18 +565,23 @@ try:
 								sys.exit(0)
 
 							while True:
-								if len(data["temp"])==len(data["group"]):
+								if data["uwu"] and len(data["temp"])==len(data["group"]):
 									data["notice"]="@"+" @".join(data["temp"])+" "
 									send(f"{data['notice']}\n人数到齐 开始抽牌 请注意查看私聊")
 
 									random.shuffle(data["temp"])
 
-									for _ in data["temp"]:
-										note=data["group"][data["temp"].index(_)]
-										data["core"][_]=[_,note,card[note][2],True]
+									try:
+										for _ in data["temp"]:
+											note=data["group"][data["temp"].index(_)]
+											data["core"][_]=[_,note,card[note][2],True]
 
-										time.sleep(1)
-										send(f"·\n你的卡牌：\n【{card[note][0]}】/【{card[0][card[note][2]]}】\n·\n你的任务：\n{card[note][1]}\n·\n获胜条件：\n【{card[0][not card[note][2]]}】全员阵亡\n·\n设置遗言(死亡前有效)：\n/w {botname} msg(换行)遗言",_)
+											time.sleep(1)
+											send(f"·\n你的卡牌：\n【{card[note][0]}】/【{card[0][card[note][2]]}】\n·\n你的任务：\n{card[note][1]}\n·\n获胜条件：\n【{card[0][not card[note][2]]}】全员阵亡\n·\n设置遗言(死亡前有效)：\n/w {botname} msg(换行)遗言",_)
+
+									except:
+										for _ in data["temp"][len(data["group"])-1:]:
+											data["temp"].pop(data["temp"].index(_))
 
 									time.sleep(2)
 									send(f"发牌完毕 【{other['game']}】正式开始")
@@ -614,7 +619,7 @@ try:
 
 						if not data["core"]:
 							if nick==data["owner"]:
-								allow=[int(_) for _ in uwu.split(" ") if _ in ["1","2","3","4"]]
+								allow=[int(_) for _ in uwu.split(" ") if _ in list("1234")]
 
 								if allow==data["group"]:
 									send("牌组和原先相同 不变更",nick)
@@ -782,11 +787,11 @@ try:
 										if uwu in data["witch"]["allow"]:
 											state=not data["core"][uwu][3]
 											note=data["witch"]["med"][state]
-											send(f"你使用{note[2]}成功{note[3]}了[{uwu}]",nick)
+											send(f"你使用{potion[note[0]][0]}成功{potion[note[0]][1]}了[{uwu}]",nick)
 
 											chan(uwu,state)
 											data["witch"]["temp"]=[uwu,state]
-											data["witch"]["med"][state][1]=False
+											data["witch"]["med"][state]=[state,False,uwu]
 
 											note=f"获得了新生"
 
