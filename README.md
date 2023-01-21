@@ -8,8 +8,11 @@ ee：我觉得class实在没必要 所以没用
 请随意吐槽我臃肿的屎山代码  
 不能对我的uwu变量名有意见(被打)
 
-**Thanks:Maggie zzChumo xuan2wei1 4n0n4me jmr DPG IAmLonelyWhoCanSaveMe 23**  
-感谢以上帮忙测试的小伙伴们
+**Thanks:Maggie zzChumo xuan2wei1 4n0n4me DPG IAmLonelyWhoCanSaveMe 23**  
+**666 huolongguo10 Qwer xmzd DengquejieL mouse x jimmyfj MuRongPIG in9 a undefile**  
+ee：感谢以上帮忙测试的小伙伴们  
+我把jmr删了 毕竟成作者之一了  
+好家伙 什么时候这么多人了
 
 ## 【使用方法】
 **更改【设置区域】**  
@@ -17,37 +20,52 @@ ee：我觉得class实在没必要 所以没用
 **运行(以实际情况为准)**：python main.py
 
 ## 【更新记录】
-### uwu.1.00 2023.01.18
+### uwu.1.00｜2023.01.18｜paperee(ee)
 - 完成了机器人框架
 
-### uwu.1.08 2023.01.19**
+### ?｜2023.01.19｜jiangmuran(jmr)
+- 添加了结束游戏功能
+
+### uwu.1.08｜2023.01.19｜paperee(ee)
 - 修复了老版本的BUG(详见BUG报告)
-- 优化了储存数据库结构
+- 优化了数据库结构
 - 优化了代码结构(还是屎山)
 - 修改了部分变量名(强迫症)
 - 修改了女巫的阵营
-- 添加了新的操作和变更项
+- 添加了新的可操作和课变更项
 - 添加了遗言功能
 - 添加了特殊项自动强调的功能
 - 添加了自动判断消息类型的功能
 
-### uwu.1.10 2023.01.20**
+### uwu.1.10｜2023.01.20｜jiangmuran(jmr)
 - 修复了老版本的BUG(详见BUG报告)
-- 发现了更多的bug
+- 发现了更多BUG(md)
 - 优化了程序结构
-- 补充了数据库
+- 补充了数据库项目
 
+### uwu.1.12｜2023.01.21｜paperee(ee)
+- 修复了老版本的BUG(详见BUG报告)
+- 发现了更多BUG(md)
+- 修改了部分可操作项
+- 添加了新的预设频道列表
 
-## 【是否解决｜已知BUG报告｜修复人员】
-- x｜有时狼人的场合重复出现
-- x｜已知身份后还会显示请睁眼
-- x｜发送消息有时会达到上线（自动判断/多代理）
-- x｜无法判断有没有lockroom
-- x｜准备增加权限系统
-- x｜预言家死亡后还没轮到下一个角色时预言家依然可以预测
+## 【是否解决｜已知BUG报告｜修复者】
+- x｜发送消息有时会达到上线(自动判断/多代理)
+- x｜无法判断有没有lockroom(锁房)
 - x｜预言家部分时候无法预测
-- v｜开始后无法停止/村长下线｜jiangmuran(jmr)
+- x｜夜晚女巫的行动会保存到下一局
+- x｜卡等待时间可以重复/延时操作
+- v｜开始后无法停止/让村长下线｜jiangmuran(jmr)
 - v｜变更牌名后部分无效｜paperee(ee)
 - v｜变更牌组后无法自动开始｜paperee(ee)
 - v｜结束后胜利方存活为0｜paperee(ee)
 - v｜结束后女巫的用药不显示｜paperee(ee)
+- v｜有时狼人的场合重复出现｜paperee(ee)
+- v｜已知身份后还会显示请睁眼｜paperee(ee)
+
+## 【是否实现｜预计加入功能｜提出者】
+- x｜权限系统｜jiangmuran(jmr)
+- x｜查看身份功能｜jiangmuran(jmr)
+- x｜踢出玩家功能｜jiangmuran(jmr)
+- x｜机器人参与游戏｜paperee(ee)
+- v｜遗言功能｜paperee(ee)
