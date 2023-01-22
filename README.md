@@ -10,9 +10,6 @@ ee：我觉得class实在没必要 所以没用
 
 **Thanks:Maggie zzChumo xuan2wei1 4n0n4me DPG IAmLonelyWhoCanSaveMe 23**  
 **666 huolongguo10 Qwer xmzd DengquejieL mouse x jimmyfj MuRongPIG in9 a undefile**  
-ee：感谢以上帮忙测试的小伙伴们  
-我把jmr删了 毕竟成作者之一了  
-好家伙 什么时候这么多人了
 
 ## 【使用方法】
 **更改【设置区域】**  
@@ -49,9 +46,11 @@ ee：感谢以上帮忙测试的小伙伴们
 - 修改了部分可操作项
 - 添加了新的预设频道列表
 
-### uwu.1.13｜2023.01.22｜jiangmuran(jmr)
+### uwu.1.14｜2023.01.22｜jiangmuran(jmr)
 - 修复了部分bug
 - 发现了更多的bug
+- 提出了新的功能
+- 补充了词库
 - 添加了极具迷惑性的root作弊（debug）
 - 增加简单的权限系统
 
@@ -74,4 +73,6 @@ ee：感谢以上帮忙测试的小伙伴们
 - v｜查看身份功能（作弊）｜jiangmuran(jmr)
 - x｜杀掉玩家功能（作弊）｜jiangmuran(jmr)
 - x｜机器人参与游戏｜paperee(ee)
+- x｜玩家查询自己的身份｜jiangmuran(jmr)
+- x｜把其他的设置也搬到文件里｜jiangmuran(jmr)
 - v｜遗言功能｜paperee(ee)
