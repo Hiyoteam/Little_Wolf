@@ -114,12 +114,15 @@ try:
 
 	# 保存配置文件
 	def save_config():
+		d = ""
+		for i in rootlist:
+			d=d+i+'\n'
 		with open('admintriplist.txt','w') as f:
-			f.write(rootlist.join('\n'))
+			f.write(d)
     # 加载配置文件
 	def load_config():
 		with open('admintriplist.txt','r') as f:
-			root=r.read().split('\n')
+			root=f.read().split('\n')
 
 	try:
 		load_config()
@@ -208,7 +211,7 @@ try:
 							send(f"[{nick}]成功获取root权限")
 
 							time.sleep(1)
-							send(f"·\n可操作项：\n重启(reboot) 关机(close) 添加root用户(add) 删除root用户(delete) 查看当前牌型(reload)\n·\n可变更项：\n卡牌(card) 阵营(camp) 药水(potion) 牌组(group) 其他(other)\n·\n变更说明：\n卡牌：牌序(1~4) 牌名(str) 阵营(1/0)\n阵营：正方阵营名(str) 反方阵营名(str)\n药水：好坏(1/0) 药名(str) 状态(str)\n牌组：牌序(1~4)\n其他：发起者称呼(str) 玩家称呼(str) 游戏名(str)",nick)
+							send(f"·\n可操作项：\n重启(reboot) 关机(close) 添加root用户(add) 删除root用户(delete) 清空root用户(clear) 查看当前牌型(reload)\n·\n可变更项：\n卡牌(card) 阵营(camp) 药水(potion) 牌组(group) 其他(other)\n·\n变更说明：\n卡牌：牌序(1~4) 牌名(str) 阵营(1/0)\n阵营：正方阵营名(str) 反方阵营名(str)\n药水：好坏(1/0) 药名(str) 状态(str)\n牌组：牌序(1~4)\n其他：发起者称呼(str) 玩家称呼(str) 游戏名(str)",nick)
 
 						else:
 							try:
@@ -262,19 +265,24 @@ try:
 									send(str(data),nick)
 
 								elif order=="add":
-									rootlist.append(slices[0][1])
+									rootlist.append(slices[1][0])
 									save_config()
 
-								elif order=="reload":
-									del rootlist.index(slices[0][1])
-									save_config
+								elif order=="delete":
+									del rootlist[rootlist.index(slices[1][0])]
+									save_config()
+
+
+								elif order=="clear":
+									rootlist=[]
+									save_config()
 
 
 								elif order=="other":
 									other={'op':slices[1][0],'core':slices[1][1],'game':slices[1][2]}
 
 								else:
-									note="找不到此变更项"
+									note="找不到此变更项"+order
 
 								send(note)
 
