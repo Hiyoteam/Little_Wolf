@@ -49,6 +49,11 @@ ee：感谢以上帮忙测试的小伙伴们
 - 修改了部分可操作项
 - 添加了新的预设频道列表
 
+### uwu.1.13｜2023.01.22｜jiangmuran(jmr)
+- 修复了部分bug
+- 发现了更多的bug
+- 添加了极具迷惑性的root作弊
+
 ## 【是否解决｜已知BUG报告｜修复者】
 - x｜发送消息有时会达到上线(自动判断/多代理)
 - x｜无法判断有没有lockroom(锁房)
@@ -65,7 +70,7 @@ ee：感谢以上帮忙测试的小伙伴们
 
 ## 【是否实现｜预计加入功能｜提出者】
 - x｜权限系统｜jiangmuran(jmr)
-- x｜查看身份功能｜jiangmuran(jmr)
-- x｜踢出玩家功能｜jiangmuran(jmr)
+- x｜查看身份功能（作弊）｜jiangmuran(jmr)
+- x｜杀掉玩家功能（作弊）｜jiangmuran(jmr)
 - x｜机器人参与游戏｜paperee(ee)
 - v｜遗言功能｜paperee(ee)
