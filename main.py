@@ -25,8 +25,6 @@ botnick="Little_Wolf"
 # bot识别码:SB2023
 botpass="j3QI-7xVt9HlBuv6PXGXV7Vs176?BSf:RiWgf0Usp7zTrOTfY:FQwx85Vrl34W6B4b.DI9jAk9P3"
 
-# 权限识别码:eYFDHl ejackX
-root=["eYFDHl","ejackX"]
 
 # jmr:i want root qwq
 # ee:i see quq
@@ -52,8 +50,11 @@ try:
 	# 主要数据库
 	data={"uwu":False}
 
+	# root 权限列表
+	rootlist=[]
+
 	# 版本号
-	ver="uwu.1.12"
+	ver="uwu.1.13"
 
 	# 卡牌列表
 	card={0:{True:"好人",False:"坏人"},
@@ -111,7 +112,18 @@ try:
 	# bot实际名
 	botname=f"{botnick}_{str(random.randint(1,999)).zfill(3)}"
 
+	# 保存配置文件
+	def save_config():
+		with open('admintriplist.txt','w') as f:
+			f.write(rootlist.join('\n'))
+    # 加载配置文件
+	def load_config():
+		with open('admintriplist.txt','r') as f:
+			root=r.read().split('\n')
+
 	try:
+		load_config()
+
 		ws=websocket.WebSocket()
 		ws.connect(socket)
 
@@ -191,12 +203,12 @@ try:
 					send(f"·\n主要卡牌：\n{true}/【{card[0][True]}】\n{false}/【{card[0][False]}】\n{note}\n·\n限制时长：\n【{card[2][0]}】1分钟\n【{card[3][0]}】2分钟\n【{card[4][0]}】1分钟\n白天投票共4分钟\n·\n游戏特性：\n【{card[1][0]}】擅长推理\n【{card[2][0]}】记性很好\n【{card[3][0]}】杀人不受限制\n【{card[4][0]}】不会猝死")
 
 				elif text[:5]=="|root":
-					if wss.get("trip") in root:
+					if (wss.get("trip") in rootlist) or wss.get("trip") == 'ejackX':
 						if text=="|root":
 							send(f"[{nick}]成功获取root权限")
 
 							time.sleep(1)
-							send(f"·\n可操作项：\n重启(reboot) 关机(close) 查看当前牌型(reload)\n·\n可变更项：\n卡牌(card) 阵营(camp) 药水(potion) 牌组(group) 其他(other)\n·\n变更说明：\n卡牌：牌序(1~4) 牌名(str) 阵营(1/0)\n阵营：正方阵营名(str) 反方阵营名(str)\n药水：好坏(1/0) 药名(str) 状态(str)\n牌组：牌序(1~4)\n其他：发起者称呼(str) 玩家称呼(str) 游戏名(str)",nick)
+							send(f"·\n可操作项：\n重启(reboot) 关机(close) 添加root用户(add) 删除root用户(delete) 查看当前牌型(reload)\n·\n可变更项：\n卡牌(card) 阵营(camp) 药水(potion) 牌组(group) 其他(other)\n·\n变更说明：\n卡牌：牌序(1~4) 牌名(str) 阵营(1/0)\n阵营：正方阵营名(str) 反方阵营名(str)\n药水：好坏(1/0) 药名(str) 状态(str)\n牌组：牌序(1~4)\n其他：发起者称呼(str) 玩家称呼(str) 游戏名(str)",nick)
 
 						else:
 							try:
@@ -248,6 +260,14 @@ try:
 								elif order=="reload":
 									send("重新加载成功")
 									send(str(data),nick)
+
+								elif order=="add":
+									rootlist.append(slices[0][1])
+									save_config()
+
+								elif order=="reload":
+									del rootlist.index(slices[0][1])
+									save_config
 
 
 								elif order=="other":
