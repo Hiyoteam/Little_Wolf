@@ -54,7 +54,7 @@ try:
 	rootlist=[]
 
 	# 版本号
-	ver="uwu.1.14"
+	ver="uwu.1.15"
 
 	# 卡牌列表
 	card={0:{True:"好人",False:"坏人"},

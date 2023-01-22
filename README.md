@@ -16,6 +16,16 @@ ee：我觉得class实在没必要 所以没用
 **安装库**：pip install websocket-client  
 **运行(以实际情况为准)**：python main.py
 
+## 【如何设置快捷更新】
+linux:
+**复制updatewolf.sh至/usr/bin**
+**在/usr/bin目录下输入sudo chmod 777 updatewolf.sh**
+**以后只要输入updatewolf.sh再在聊天室里输入|root reboot就可以完成更新了**
+windows:
+**乖乖自己搞**
+
+
+
 ## 【更新记录】
 ### uwu.1.00｜2023.01.18｜paperee(ee)
 - 完成了机器人框架
@@ -46,13 +56,14 @@ ee：我觉得class实在没必要 所以没用
 - 修改了部分可操作项
 - 添加了新的预设频道列表
 
-### uwu.1.14｜2023.01.22｜jiangmuran(jmr)
+### uwu.1.15｜2023.01.22｜jiangmuran(jmr)
 - 修复了部分bug
 - 发现了更多的bug
 - 提出了新的功能
 - 补充了词库
-- 添加了极具迷惑性的root作弊（debug）
+- 添加了debug
 - 增加简单的权限系统
+- 添加了linux下的一键更新
 
 ## 【是否解决｜已知BUG报告｜修复者】
 - x｜无法判断有没有lockroom(锁房)
