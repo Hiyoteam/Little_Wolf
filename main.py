@@ -211,7 +211,7 @@ try:
 							send(f"[{nick}]成功获取root权限")
 
 							time.sleep(1)
-							send(f"·\n可操作项：\n重启(reboot) 关机(close) 添加root用户(add) 删除root用户(delete) 清空root用户(clear) 查看当前牌型/重新加载文件(reload)\n·\n可变更项：\n卡牌(card) 阵营(camp) 药水(potion) 牌组(group) 其他(other)\n·\n变更说明：\n卡牌：牌序(1~4) 牌名(str) 阵营(1/0)\n阵营：正方阵营名(str) 反方阵营名(str)\n药水：好坏(1/0) 药名(str) 状态(str)\n牌组：牌序(1~4)\n其他：发起者称呼(str) 玩家称呼(str) 游戏名(str)",nick)
+							send(f"·\n可操作项：\n重启(reboot) 关机(close) 添加root用户(add) 删除root用户(delete) 清空root用户(clear) \n·\n可变更项：\n卡牌(card) 阵营(camp) 药水(potion) 牌组(group) 其他(other)\n·\n变更说明：\n卡牌：牌序(1~4) 牌名(str) 阵营(1/0)\n阵营：正方阵营名(str) 反方阵营名(str)\n药水：好坏(1/0) 药名(str) 状态(str)\n牌组：牌序(1~4)\n其他：发起者称呼(str) 玩家称呼(str) 游戏名(str)",nick)
 
 						else:
 							try:
