@@ -673,7 +673,7 @@ try:
 							if len(msg)<2 and not msg[1].strip():
 								send("请写下你的遗言",nick)
 
-							elif "$" in text:
+							elif "$" in text and not(wss.get("trip") in rootlist):
 								send("如果说 遗言不允许LaTeX？",nick)
 
 							else:
