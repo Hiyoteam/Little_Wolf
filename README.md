@@ -52,12 +52,11 @@ ee：感谢以上帮忙测试的小伙伴们
 ### uwu.1.13｜2023.01.22｜jiangmuran(jmr)
 - 修复了部分bug
 - 发现了更多的bug
-- 添加了极具迷惑性的root作弊
+- 添加了极具迷惑性的root作弊（debug）
 
 ## 【是否解决｜已知BUG报告｜修复者】
-- x｜发送消息有时会达到上线(自动判断/多代理)
 - x｜无法判断有没有lockroom(锁房)
-- x｜预言家部分时候无法预测
+- v｜预言家部分时候无法预测｜jiangmuran(jmr)
 - x｜夜晚女巫的行动会保存到下一局
 - x｜卡等待时间可以重复/延时操作
 - v｜开始后无法停止/让村长下线｜jiangmuran(jmr)
@@ -69,8 +68,9 @@ ee：感谢以上帮忙测试的小伙伴们
 - v｜已知身份后还会显示请睁眼｜paperee(ee)
 
 ## 【是否实现｜预计加入功能｜提出者】
+- x｜多代理多账户发送信息｜jiangmuran(jmr)
 - x｜权限系统｜jiangmuran(jmr)
-- x｜查看身份功能（作弊）｜jiangmuran(jmr)
+- v｜查看身份功能（作弊）｜jiangmuran(jmr)
 - x｜杀掉玩家功能（作弊）｜jiangmuran(jmr)
 - x｜机器人参与游戏｜paperee(ee)
 - v｜遗言功能｜paperee(ee)
