@@ -20,7 +20,7 @@ ee：我觉得class实在没必要 所以没用
 linux:
 **复制updatewolf.sh至/usr/bin**
 **在/usr/bin目录下输入sudo chmod 777 updatewolf.sh**
-**以后只要在聊天室里输入|root close再输入updatewolf.sh再就可以完成更新了**
+**以后只要在聊天室里输入|root close再输入updatewolf.sh完成后输入exit就可以完成更新了**
 windows:
 **乖乖自己搞**
 
