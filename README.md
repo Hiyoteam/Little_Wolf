@@ -11,8 +11,7 @@ ee：我觉得class实在没必要 所以没用
 **Thanks:Maggie zzChumo xuan2wei1 4n0n4me DPG IAmLonelyWhoCanSaveMe 23**  
 **666 huolongguo10 Qwer xmzd DengquejieL mouse x jimmyfj MuRongPIG in9 a undefile**  
 
-## 【如何快捷更新】
-- **Linux**
+## 【Linux如何快捷更新】
 聊天室里输入(如有运行)：`|root close`  
 终端里输入：`sudo chmod 777 updatewolf.sh`  
 终端里输入：`updatewolf.sh`
