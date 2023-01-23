@@ -11,26 +11,21 @@ ee：我觉得class实在没必要 所以没用
 **Thanks:Maggie zzChumo xuan2wei1 4n0n4me DPG IAmLonelyWhoCanSaveMe 23**  
 **666 huolongguo10 Qwer xmzd DengquejieL mouse x jimmyfj MuRongPIG in9 a undefile**  
 
-## 【使用方法】
-**更改【设置区域】**  
-**安装库**：pip install websocket-client  
-**运行(以实际情况为准)**：python main.py
+## 【如何快捷更新】
+- **Linux**
+聊天室里输入(如有运行)：`|root close`  
+终端里输入：`sudo chmod 777 updatewolf.sh`  
+终端里输入：`updatewolf.sh`
 
-## 【如何设置快捷更新】
-linux:
-**复制updatewolf.sh至/usr/bin**
-**在/usr/bin目录下输入sudo chmod 777 updatewolf.sh**
-**以后只要在聊天室里输入|root close再输入updatewolf.sh完成后输入exit就可以完成更新了**
-windows:
-**乖乖自己搞**
-
-
+## 【如何使用机器人】
+安装库：`pip install -r requirements.txt`  
+运行(以实际情况为准)：`python3 main.py`
 
 ## 【更新记录】
 ### uwu.1.00｜2023.01.18｜paperee(ee)
 - 完成了机器人框架
 
-### ?｜2023.01.19｜jiangmuran(jmr)
+### None｜2023.01.19｜jiangmuran(jmr)
 - 添加了结束游戏功能
 
 ### uwu.1.08｜2023.01.19｜paperee(ee)
@@ -41,35 +36,39 @@ windows:
 - 修改了女巫的阵营
 - 添加了新的可操作和课变更项
 - 添加了遗言功能
-- 添加了特殊项自动强调的功能
-- 添加了自动判断消息类型的功能
+- 添加了自动强调功能
+- 添加了自动判断消息类型
 
 ### uwu.1.10｜2023.01.20｜jiangmuran(jmr)
 - 修复了老版本的BUG(详见BUG报告)
-- 发现了更多BUG(md)
+- 发现了更多BUG
 - 优化了程序结构
 - 补充了数据库项目
 
 ### uwu.1.12｜2023.01.21｜paperee(ee)
 - 修复了老版本的BUG(详见BUG报告)
-- 发现了更多BUG(md)
+- 发现了更多BUG
 - 修改了部分可操作项
 - 添加了新的预设频道列表
 
 ### uwu.1.15｜2023.01.22｜jiangmuran(jmr)
-- 修复了部分bug
-- 发现了更多的bug
-- 提出了新的功能
-- 补充了词库
-- 添加了debug
-- 增加简单的权限系统
-- 添加了linux下的一键更新
+- 修复了老版本的BUG(详见BUG报告)
+- 发现了更多BUG
+- 补充了词库(干得好)
+- 引入了读写文件想法
+- 添加了debug功能
+- 添加了简单的权限系统
+- 添加了Linux下的一键更新
+
+### uwu.1.19｜2023.01.23｜paperee(ee)
+- 修复了老版本的BUG(详见BUG报告)
+- 优化了自动强调功能
+- 优化了权限系统(强迫症)
+- 添加了查询身份功能
+- 添加了保存日志功能
 
 ## 【是否解决｜已知BUG报告｜修复者】
-- x｜无法判断有没有lockroom(锁房)
 - v｜预言家部分时候无法预测｜jiangmuran(jmr)
-- x｜夜晚女巫的行动会保存到下一局
-- x｜卡等待时间可以重复/延时操作
 - v｜开始后无法停止/让村长下线｜jiangmuran(jmr)
 - v｜变更牌名后部分无效｜paperee(ee)
 - v｜变更牌组后无法自动开始｜paperee(ee)
@@ -77,13 +76,19 @@ windows:
 - v｜结束后女巫的用药不显示｜paperee(ee)
 - v｜有时狼人的场合重复出现｜paperee(ee)
 - v｜已知身份后还会显示请睁眼｜paperee(ee)
+- v｜夜晚女巫的行动会保存到下一局｜paperee(ee)
+- v｜卡等待时间可以重复/延时操作｜paperee(ee)
 
-## 【是否实现｜预计加入功能｜提出者】
-- x｜多代理多账户发送信息｜jiangmuran(jmr)
+## 【是否实现｜预计加入功能｜实现者】
+- x｜多代理多账户发送信息
+- x｜设置永久生效(写入文件)
+- x｜机器人参与游戏(人机)
+- x｜踢出玩家功能
+- v｜结束游戏功能｜jiangmuran(jmr)
+- v｜查看数据功能(debug)｜jiangmuran(jmr)
 - v｜权限系统｜jiangmuran(jmr)
-- v｜查看身份功能（作弊）｜jiangmuran(jmr)
-- x｜杀掉玩家功能（作弊）｜jiangmuran(jmr)
-- x｜机器人参与游戏｜paperee(ee)
-- x｜玩家查询自己的身份｜jiangmuran(jmr)
-- x｜把其他的设置也搬到文件里｜jiangmuran(jmr)
 - v｜遗言功能｜paperee(ee)
+- v｜自动强调功能｜paperee(ee)
+- v｜自动判断消息类型｜paperee(ee)
+- v｜查询身份功能｜paperee(ee)
+- v｜保存日志功能｜paperee(ee)
