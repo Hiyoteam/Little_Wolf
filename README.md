@@ -66,6 +66,9 @@ ee：我觉得class实在没必要 所以没用
 - 添加了查询身份功能
 - 添加了保存日志功能
 
+### uwu.1.20|2023.02.09|huolongguo10(Radium)
+- 改了亿点没用的bug
+- 
 ## 【是否解决｜已知BUG报告｜修复者】
 - v｜预言家部分时候无法预测｜jiangmuran(jmr)
 - v｜开始后无法停止/让村长下线｜jiangmuran(jmr)
