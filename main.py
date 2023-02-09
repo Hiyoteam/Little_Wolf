@@ -47,6 +47,7 @@ import random
 import os
 import sys
 import threading
+import traceback
 
 try:
 	# 主要数据库
@@ -300,8 +301,10 @@ try:
 
 								send(note)
 
-							except:
+							except Exception as e:
 								send("执行时出现错误")
+								time.sleep(1)
+								send(traceback.format_exc())
 
 					else:
 						send(roll(emote))
