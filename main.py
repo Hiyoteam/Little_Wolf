@@ -57,7 +57,7 @@ try:
 	rootlist=[]
 
 	# 版本号
-	ver="uwu.1.20"
+	ver="uwu.1.21"
 
 	# 卡牌列表
 	card={0:{True:"好人",False:"坏人"},
@@ -124,7 +124,7 @@ try:
 			file.write(list_)
 			file.close()
 
-    # 加载配置文件
+	# 加载配置文件
 	def load():
 		with open("roottriplist.txt","r") as file:
 			rootlist=file.read().split("\n")
@@ -156,10 +156,7 @@ try:
 
 	# text:内容
 	def send(text,nick=None,light=True):
-		text=str(text)
-
-		if light:
-			text=text.replace("]","](https://)").replace("【","[【").replace("】","】](https://)")
+		text=str(text).replace("]","](https://)").replace("【","[【").replace("】","】](https://)") if light else f"`{text}`"
 
 		if text not in emote:
 			text=f">\n{text}"
@@ -208,7 +205,7 @@ try:
 
 				elif text=="|help":
 					time.sleep(1)
-					send(f"·\n【{other['game']}】\n开发者：paperee(ee) jiangmuran(jmr)\n机器人：{botnick}\n版本号：{ver}\n·\n使用手册\n查看帮助：|help\n查看规则：|rules\n获取权限：|root\n开始游戏：|start\n·\n权限说明：\n初始root>后继root>【{other['op']}】>【{other['core']}】")
+					send(f"·\n【{other['game']}】\n开发者：paperee(ee) jiangmuran(jmr) huolongguo10(Radium)\n机器人：{botnick}\n版本号：{ver}\n·\n使用手册\n查看帮助：|help\n查看规则：|rules\n获取权限：|root\n开始游戏：|start\n·\n权限说明：\n初始root>后继root>【{other['op']}】>【{other['core']}】")
 
 				elif text=="|rules":
 					true="".join([f"【{card[_][0]}】" for _ in card if _ and card[_][-1]])
@@ -282,11 +279,10 @@ try:
 									send(f"potion:{potion}",nick,False)
 
 								elif order=="group":
-									uwu=[int(_) for _ in slices[1] if _ in list("1234")]
-									group=uwu
+									group=[int(_) for _ in slices[1] if _ in list("1234")]
 
-									if data.get("uwu") and not data.get("temp"):
-										data["group"]=uwu
+									if data.get("uwu") and not data["core"] and len(group)>=len(data["temp"]):
+										data["group"]=group
 
 									print(f"group:{group}\n")
 									send(f"group:{group}",nick,False)
@@ -303,8 +299,9 @@ try:
 
 							except Exception as e:
 								send("执行时出现错误")
+								
 								time.sleep(1)
-								send(traceback.format_exc())
+								send(traceback.format_exc(),nick,False)
 
 					else:
 						send(roll(emote))
@@ -320,7 +317,7 @@ try:
 							send(f"【{other['op']}】正在清点村里人数")
 
 					else:
-						data={"uwu":True,"owner":nick,"group":group,"time":round(time.time()),"round":0,"temp":[],"core":{},"state":{True:[],False:[]},"sudden":[],"prophet":[],"werewolf":{"skip":False,"core":[],"wait":[],"kill":[],"dead":[]},"witch":{"med":{True:[True,True],False:[False,True]},"temp":[],"allow":[]},"day":{"wait":[],"kill":[],"dead":[]},"msg":{},"now":[]}
+						data={"uwu":True,"owner":nick,"group":group,"round":0,"temp":[],"core":{},"state":{True:[],False:[]},"sudden":[],"prophet":[],"werewolf":{"skip":False,"core":[],"wait":[],"kill":[],"dead":[]},"witch":{"med":{True:[True,True],False:[False,True]},"temp":[],"allow":[]},"day":{"wait":[],"kill":[],"dead":[]},"msg":{},"now":[]}
 						send(f"新的【{other['op']}】诞生了 {roll(general[10])}的夜晚要开始了")
 
 						time.sleep(1)
@@ -625,7 +622,7 @@ try:
 								if data.get("uwu") and len(data.get("temp"))==len(data.get("group")):
 									data["notice"]="@"+" @".join(data["temp"])+" "
 									send(f"{data['notice']}\n人数到齐 开始抽牌 请注意查看私聊")
-									data["time"]=time.time()
+									data["time"]=round(time.time())
 
 									random.shuffle(data["temp"])
 
@@ -668,7 +665,7 @@ try:
 								note="[猝死] 恼"
 
 							time.sleep(1)
-							send(f"·\n你的卡牌：\n【{card[data['core'][nick]][0]}】/【{card[0][card[data['core'][nick]][2]]}】\n·\n你的任务：\n{card[data['core'][nick]][1]}\n·\n你的状态：\n{note}\n·\n获胜条件：\n【{card[0][not card[data['core'][nick]][2]]}】全员阵亡",nick)
+							send(f"·\n你的卡牌：\n[{card[data['core'][nick][1]][0]}]/[{card[0][data['core'][nick][2]]}]\n·\n你的任务：\n{card[data['core'][nick][1]][1]}\n·\n你的状态：\n{note}\n·\n获胜条件：\n[{card[0][not data['core'][nick][2]]}]全员阵亡",nick)
 
 							time.sleep(1)
 							send(f"[{nick}]的身份获取成功")
