@@ -622,6 +622,7 @@ try:
 								if data.get("uwu") and len(data.get("temp"))==len(data.get("group")):
 									data["notice"]="@"+" @".join(data["temp"])+" "
 									send(f"{data['notice']}\n人数到齐 开始抽牌 请注意查看私聊")
+									data["time"]=time.time()
 
 									random.shuffle(data["temp"])
 
